@@ -8,15 +8,19 @@ export default function LanguageSelector() {
   }
   return (
     <div>
-      <select value={i18n.language} onChange={handelChangeLang} className="
-    h-10 rounded-md border border-border
-    bg-background
-    px-3
-    text-foreground
-    focus:outline-none
-    focus:ring-2
-    focus:ring-ring
-  ">
+      <select
+        value={i18n.language}
+        onChange={handelChangeLang}
+        className="
+          h-10 rounded-md border border-border
+          bg-background
+          px-3
+          text-foreground
+          focus:outline-none
+          focus:ring-2
+          focus:ring-ring
+        "
+      >
         <option value="en">English</option>
         <option value="vi">Vietnam</option>
       </select>

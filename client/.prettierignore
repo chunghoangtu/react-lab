@@ -1,0 +1,12 @@
+package-lock.json
+pnpm-lock.yaml
+yarn.lock
+
+README.md
+
+node_modules
+dist
+coverage
+
+# Generated
+**/routeTree.gen.ts

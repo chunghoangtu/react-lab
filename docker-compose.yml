@@ -1,0 +1,21 @@
+version: "3.8"
+services:
+  api: 
+    build: ./server
+    container_name: react-lab-server
+    ports:
+      - '8080:8080'
+    volumes:
+      - ./server:/app
+      - /app/node_modules
+  client:
+    build: ./client
+    container_name: react-lab-client
+    ports:
+      - '5173:5173'
+      - '6006:6006'
+    volumes:
+      - ./client:/app
+      - /app/node_modules
+    stdin_open: true
+    tty: true
