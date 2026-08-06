@@ -1,0 +1,207 @@
+/* =========================================================
+ * Semantic Design Tokens
+ * Tailwind CSS v4
+ * ========================================================= */
+
+/* =========================================================
+ * Light Theme
+ * ========================================================= */
+
+:root {
+  /* =======================================================
+   * App Surface
+   * ======================================================= */
+
+  /* App background */
+  --background: var(--color-white);
+
+  /* Default text */
+  --foreground: var(--color-slate-900);
+
+  /* =======================================================
+   * Brand
+   * ======================================================= */
+
+  /* Primary action */
+  --primary: var(--color-blue-600);
+
+  /* Text/Icon on Primary */
+  --primary-foreground: var(--color-white);
+
+  /* =======================================================
+   * Secondary Action
+   * ======================================================= */
+
+  --secondary: var(--color-slate-100);
+  --secondary-foreground: var(--color-slate-900);
+
+  /* =======================================================
+   * Surface
+   * ======================================================= */
+
+  /* Card */
+  --card: var(--color-white);
+  --card-foreground: var(--foreground);
+
+  /* Dropdown / Popover */
+  --popover: var(--color-white);
+  --popover-foreground: var(--foreground);
+
+  /* =======================================================
+   * Muted
+   * ======================================================= */
+
+  /* Disabled / Placeholder / Skeleton */
+  --muted: var(--color-slate-100);
+  --muted-foreground: var(--color-slate-500);
+
+  /* =======================================================
+   * Accent
+   * ======================================================= */
+
+  /* Hover / Active / Selected */
+  --accent: var(--color-slate-100);
+  --accent-foreground: var(--color-slate-900);
+
+  /* =======================================================
+   * Status
+   * ======================================================= */
+
+  --success: var(--color-green-600);
+  --success-foreground: var(--color-white);
+
+  --warning: var(--color-amber-500);
+  --warning-foreground: var(--color-slate-950);
+
+  --info: var(--color-sky-500);
+  --info-foreground: var(--color-white);
+
+  --destructive: var(--color-red-600);
+  --destructive-foreground: var(--color-white);
+
+  /* =======================================================
+   * Border
+   * ======================================================= */
+
+  --border: var(--color-slate-200);
+
+  /* Input border */
+  --input: var(--color-slate-300);
+
+  /* Focus ring */
+  --ring: var(--color-blue-500);
+}
+
+/* =========================================================
+ * Dark Theme
+ * ========================================================= */
+
+.dark {
+  /* =======================================================
+   * App Surface
+   * ======================================================= */
+
+  --background: var(--color-slate-950);
+  --foreground: var(--color-slate-50);
+
+  /* =======================================================
+   * Brand
+   * ======================================================= */
+
+  --primary: var(--color-blue-500);
+  --primary-foreground: var(--color-white);
+
+  /* =======================================================
+   * Secondary Action
+   * ======================================================= */
+
+  --secondary: var(--color-slate-800);
+  --secondary-foreground: var(--color-slate-50);
+
+  /* =======================================================
+   * Surface
+   * ======================================================= */
+
+  --card: var(--color-slate-900);
+  --card-foreground: var(--foreground);
+
+  --popover: var(--color-slate-900);
+  --popover-foreground: var(--foreground);
+
+  /* =======================================================
+   * Muted
+   * ======================================================= */
+
+  --muted: var(--color-slate-800);
+  --muted-foreground: var(--color-slate-400);
+
+  /* =======================================================
+   * Accent
+   * ======================================================= */
+
+  --accent: var(--color-slate-800);
+  --accent-foreground: var(--color-slate-50);
+
+  /* =======================================================
+   * Status
+   * ======================================================= */
+
+  --success: var(--color-green-500);
+  --success-foreground: var(--color-white);
+
+  --warning: var(--color-amber-400);
+  --warning-foreground: var(--color-slate-950);
+
+  --info: var(--color-sky-400);
+  --info-foreground: var(--color-white);
+
+  --destructive: var(--color-red-500);
+  --destructive-foreground: var(--color-white);
+
+  /* =======================================================
+   * Border
+   * ======================================================= */
+
+  --border: var(--color-slate-700);
+  --input: var(--color-slate-700);
+  --ring: var(--color-blue-400);
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+
+  --color-success: var(--success);
+  --color-success-foreground: var(--success-foreground);
+
+  --color-warning: var(--warning);
+  --color-warning-foreground: var(--warning-foreground);
+
+  --color-info: var(--info);
+  --color-info-foreground: var(--info-foreground);
+
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+}

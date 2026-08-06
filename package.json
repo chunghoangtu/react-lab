@@ -1,0 +1,17 @@
+{
+  "name": "react-lab",
+  "private": true,
+  "scripts": {
+    "client": "npm --prefix client run dev",
+    "server": "npm --prefix server run dev",
+    "dev": "concurrently \"npm run client\" \"npm run server\"",
+    "build:client": "npm --prefix client run build",
+    "build:server": "npm --prefix server run build",
+    "build": "npm --prefix client run build && npm --prefix server run build",
+    "prepare": "husky"
+  },
+  "devDependencies": {
+    "concurrently": "^9.2.4",
+    "husky": "^9.1.7"
+  }
+}
