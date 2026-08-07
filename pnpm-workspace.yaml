@@ -1,0 +1,11 @@
+packages:
+  - client
+  - server
+allowBuilds:
+  "@apollo/protobufjs": true
+  core-js: true
+  esbuild: true
+  sharp: true
+minimumReleaseAgeExclude:
+  - "@storybook/addon-vitest@10.5.7"
+  - storybook@10.5.7

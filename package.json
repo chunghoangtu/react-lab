@@ -2,20 +2,16 @@
   "name": "react-lab",
   "private": true,
   "type": "module",
-  "workspaces": [
-    "client",
-    "server"
-  ],
   "scripts": {
-    "client": "npm run dev --workspace client",
-    "test-client": "npm run test --workspace client",
-    "server": "npm run dev --workspace server",
-    "dev": "concurrently \"npm run client\" \"npm run server\"",
-    "build:client": "npm run build --workspace client",
-    "build:server": "npm run build --workspace server",
-    "build": "npm run build:client && npm run build:server",
+    "client": "pnpm --filter client dev",
+    "test-client": "pnpm --filter client test",
+    "server": "pnpm --filter server dev",
+    "dev": "concurrently \"pnpm client\" \"pnpm server\"",
+    "build:client": "pnpm --filter client build",
+    "build:server": "pnpm --filter server build",
+    "build": "pnpm build:client && pnpm build:server",
     "prepare": "husky",
-    "lint": "npm run lint --workspace client"
+    "lint": "pnpm --filter client lint"
   },
   "devDependencies": {
     "@commitlint/cli": "^21.2.1",

@@ -3,7 +3,7 @@ import react from "@vitejs/plugin-react";
 import tailwindcss from "@tailwindcss/vite";
 import { tanstackRouter } from "@tanstack/router-plugin/vite";
 import path from "path";
-
+const __dirname = import.meta.dirname;
 // https://vite.dev/config/
 export default defineConfig({
   resolve: {
