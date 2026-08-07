@@ -8,6 +8,7 @@
   ],
   "scripts": {
     "client": "npm run dev --workspace client",
+    "test-client": "npm run test --workspace client",
     "server": "npm run dev --workspace server",
     "dev": "concurrently \"npm run client\" \"npm run server\"",
     "build:client": "npm run build --workspace client",
@@ -26,6 +27,7 @@
     "eslint-plugin-prettier": "^5.5.6",
     "eslint-plugin-react-hooks": "^7.1.1",
     "eslint-plugin-react-refresh": "^0.5.3",
+    "eslint-plugin-storybook": "^10.5.5",
     "globals": "^17.7.0",
     "husky": "^9.1.7",
     "lint-staged": "^17.3.0",

@@ -1,18 +1,23 @@
 # React Lab
 
+![React](https://img.shields.io/badge/React-61DAFB?style=for-the-badge&logo=react&logoColor=white)
+![TypeScript](https://img.shields.io/badge/TypeScript-3178C6?style=for-the-badge&logo=typescript&logoColor=white)
+![Vite](https://img.shields.io/badge/Vite-646CFF?style=for-the-badge&logo=vite&logoColor=white)
+![Node.js](https://img.shields.io/badge/Node.js-339933?style=for-the-badge&logo=node.js&logoColor=white)
+
 React Lab is a full-stack TypeScript project organized as a monorepo with a React client and an Express-based server. It is designed as a learning and experimentation workspace for modern web development patterns including routing, internationalization, authentication, GraphQL, real-time communication, and containerized development.
 
-## Project Overview
+## 🚀 Project Overview
 
 This repository combines:
 
-- a modern frontend built with React, Vite, and TypeScript
-- a backend API powered by Node.js and Express
-- authentication and middleware support
-- GraphQL and real-time Socket.IO integration
-- Docker-based local development setup
+- 🟦 Modern frontend built with React, Vite, and TypeScript
+- 🟩 Backend API powered by Node.js and Express
+- 🟧 Authentication and middleware support
+- 🟪 GraphQL and real-time Socket.IO integration
+- 🟨 Docker-based local development setup
 
-## Tech Stack
+## 🧩 Tech Stack
 
 ### Frontend
 
@@ -33,7 +38,7 @@ This repository combines:
 - JWT-based authentication
 - Server-Sent Events (SSE)
 
-## Tooling and Development Workflow
+## 🛠️ Tooling and Development Workflow
 
 - npm workspaces for client/server management
 - ESLint and Prettier for code quality
@@ -41,7 +46,7 @@ This repository combines:
 - Docker Compose for local services
 - TypeScript project references for both frontend and backend
 
-## Getting Started
+## 🧪 Getting Started
 
 From the repository root, install dependencies:
 
@@ -57,7 +62,7 @@ npm run dev
 
 This starts the client and server concurrently.
 
-## Folder Structure
+## 📁 Folder Structure
 
 ```text
 react-lab/
@@ -73,13 +78,11 @@ react-lab/
 │   ├── package.json                         # Frontend scripts and deps
 │   ├── public/                              # Static assets
 │   ├── src/                                 # Source code
-│   │   ├── App.tsx                          # Root app component
-│   │   ├── main.tsx                         # App entry point
 │   │   ├── assets/                          # Fonts, images, icons
 │   │   ├── components/                      # Reusable UI components
 │   │   │   ├── composite/                   # Header, language selector, theme toggle
+│   │   │   ├── layouts/                     # Shared layouts
 │   │   │   └── ui/                          # Shared UI primitives
-|	|	|	└── layouts/					 # Shared Layouts
 │   │   ├── constants/                       # Constants
 │   │   ├── features/                        # Feature modules
 │   │   ├── hooks/                           # Custom hooks
@@ -93,7 +96,8 @@ react-lab/
 │   │   ├── types/                           # Shared TypeScript types
 │   │   ├── utils/                           # Utility helpers
 │   │   ├── routeTree.gen.ts                 # Generated route tree
-│   │   └── App.tsx                          # Root component
+│   │   ├── App.tsx                          # Root app component
+│   │   ├── main.tsx                         # App entry point
 │   ├── tsconfig.json                        # Base TS config
 │   ├── tsconfig.app.json                    # App TS config
 │   ├── tsconfig.node.json                   # Node TS config
@@ -118,6 +122,6 @@ react-lab/
 └── README.md                                # Project documentation
 ```
 
-## Notes
+## 💡 Notes
 
 This project is well-suited for experimentation with a modern full-stack architecture and can be extended with additional features such as dashboards, user management, real-time collaboration, and richer API integrations.
