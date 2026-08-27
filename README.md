@@ -40,7 +40,7 @@ This repository combines:
 
 ## 🛠️ Tooling and Development Workflow
 
-- npm workspaces for client/server management
+- pnpm workspaces for client/server management
 - ESLint and Prettier for code quality
 - Husky and Commitlint for Git hooks and commit standards
 - Docker Compose for local services
@@ -48,19 +48,48 @@ This repository combines:
 
 ## 🧪 Getting Started
 
-From the repository root, install dependencies:
+### Prerequisites
+
+- Node.js 20 or newer
+- pnpm 10 or newer
+
+Enable pnpm with Corepack if it is not already installed:
 
 ```bash
-npm install
+corepack enable
 ```
 
-Run the app in development mode:
+### Install
+
+Clone the repository, change into its directory, and install all client and server dependencies from the repository root:
 
 ```bash
-npm run dev
+git clone https://github.com/chunghoangtu/react-lab.git
+cd react-lab
+pnpm install
 ```
 
-This starts the client and server concurrently.
+### Run locally
+
+Start the client and server concurrently:
+
+```bash
+pnpm dev
+```
+
+The client is available at [http://localhost:5173](http://localhost:5173) and the API server at [http://localhost:8080](http://localhost:8080).
+
+To start only one workspace, use `pnpm client` or `pnpm server`.
+
+### Run with Docker
+
+Make sure Docker and Docker Compose are installed, then run:
+
+```bash
+docker compose up --build
+```
+
+The same client and API URLs are exposed by the containers.
 
 ## 📁 Folder Structure
 

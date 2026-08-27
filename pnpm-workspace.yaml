@@ -3,7 +3,9 @@ packages:
   - server
 allowBuilds:
   "@apollo/protobufjs": true
+  '@swc/core': true
   core-js: true
+  core-js-pure: true
   esbuild: true
   sharp: true
 minimumReleaseAgeExclude:
