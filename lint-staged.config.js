@@ -12,6 +12,7 @@ export default {
     return packages
       .map((pkg) => {
         const pkgFiles = files
+          .map((file) => path.relative(process.cwd(), file))
           .filter((file) => file.startsWith(`${pkg}/`))
           .map((file) => path.relative(pkg, file));
 
@@ -21,6 +22,5 @@ export default {
       })
       .filter(Boolean);
   },
-  "**/*.{json,md,css,scss}": (files) =>
-    `pnpm exec prettier --write ${files.join(" ")}`,
+  "**/*.{json,md,css,scss}": (files) => `pnpm exec prettier --write ${files.join(" ")}`,
 };

@@ -5,6 +5,7 @@
     "lib": ["es2023", "DOM", "DOM.Iterable"],
     "allowImportingTsExtensions": true,
     "skipLibCheck": true,
+    "noEmit": true,
 
     "module": "NodeNext",
     "moduleResolution": "NodeNext",
