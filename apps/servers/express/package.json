@@ -1,5 +1,5 @@
 {
-  "name": "server",
+  "name": "@repo/express",
   "version": "1.0.0",
   "description": "",
   "license": "ISC",
@@ -7,8 +7,10 @@
   "type": "module",
   "main": "index.js",
   "scripts": {
+    "build": "tsc",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "tsx watch src/index.ts"
+    "dev": "tsx watch src/index.ts",
+    "check-types": "tsc --noEmit"
   },
   "dependencies": {
     "cookie": "^2.0.1",
@@ -21,13 +23,13 @@
     "graphql": "^16.14.2"
   },
   "devDependencies": {
+    "@repo/eslint-config": "workspace:*",
+    "@repo/typescript-config": "workspace:*",
     "@types/cookie": "^0.6.0",
     "@types/cookie-parser": "^1.4.10",
     "@types/cors": "^2.8.19",
     "@types/express": "^5.0.6",
     "@types/jsonwebtoken": "^9.0.10",
-    "@types/node": "^26.1.2",
-    "tsx": "^4.23.6",
-    "typescript": "^7.0.2"
+    "@types/node": "^26.1.2"
   }
 }
