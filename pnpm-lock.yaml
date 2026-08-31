@@ -63,7 +63,7 @@ importers:
         specifier: ^8.66.0
         version: 8.68.0(eslint@10.9.1(jiti@2.7.0)(supports-color@8.1.1))(supports-color@8.1.1)(typescript@6.0.3)
 
-  apps/clients/web/react-lap:
+  apps/clients/web/react-lab:
     dependencies:
       '@hookform/resolvers':
         specifier: ^5.4.0
@@ -201,6 +201,9 @@ importers:
       '@vitest/coverage-v8':
         specifier: ^4.1.10
         version: 4.1.11(@vitest/browser@4.1.11)(vitest@4.1.11)
+      concurrently:
+        specifier: ^9.2.4
+        version: 9.2.4
       jsdom:
         specifier: ^30.0.1
         version: 30.0.1

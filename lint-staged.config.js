@@ -1,7 +1,7 @@
 import path from "node:path";
 
 const packages = [
-  "apps/clients/web/react-lap",
+  "apps/clients/web/react-lab",
   "apps/servers/express",
   "packages/eslint-config",
   "packages/typescript-config",

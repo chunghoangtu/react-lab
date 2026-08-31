@@ -3,13 +3,13 @@ FROM node:26-bookworm-slim
 
 WORKDIR /app
 
-
 RUN npm install -g pnpm@11.23.0
 
 COPY . .
 
 RUN pnpm install
 
-EXPOSE 8080
+EXPOSE 5173
+EXPOSE 6006
 
-CMD ["pnpm", "dev:express-server"]
+CMD ["pnpm", "dev:react-client"]
