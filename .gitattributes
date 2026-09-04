@@ -1,0 +1,19 @@
+# Set the default behavior for line endings
+* text=auto
+
+# Ensure all JavaScript and TypeScript files use LF
+*.js text eol=lf
+*.jsx text eol=lf
+*.ts text eol=lf
+*.tsx text eol=lf
+
+# Treat Markdown and properties files as text
+*.md text
+*.properties text
+
+# Prevent binary files from being modified
+*.png binary
+*.jpg binary
+*.jpeg binary
+*.gif binary
+*.ico binary
