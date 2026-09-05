@@ -1,5 +1,5 @@
 {
-  "name": "@repo/react-google-oauth-demo",
+  "name": "@repo/react-leaflet-demo",
   "private": true,
   "version": "0.0.0",
   "type": "module",
@@ -10,16 +10,18 @@
     "preview": "vite preview"
   },
   "dependencies": {
-    "@react-oauth/google": "^0.13.5",
     "@tailwindcss/vite": "^4.3.3",
     "jwt-decode": "^4.0.0",
+    "leaflet": "^1.9.4",
     "react": "^19.2.8",
     "react-dom": "^19.2.8",
+    "react-leaflet": "^5.0.0",
     "tailwindcss": "^4.3.3"
   },
   "devDependencies": {
     "@repo/eslint-config": "workspace:*",
     "@repo/typescript-config": "workspace:*",
+    "@types/leaflet": "^1.9.22",
     "@types/node": "^24.13.3",
     "@types/react": "^19.2.17",
     "@types/react-dom": "^19.2.3",

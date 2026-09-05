@@ -1,0 +1,11 @@
+@import "tailwindcss";
+/* index.css */
+@import "leaflet/dist/leaflet.css";
+
+html,
+body,
+#root {
+  width: 100%;
+  min-height: 100%;
+  margin: 0;
+}
