@@ -154,3 +154,9 @@ react-lab/
 ## 💡 Notes
 
 This project is well-suited for experimentation with a modern full-stack architecture and can be extended with additional features such as dashboards, user management, real-time collaboration, and richer API integrations.
+
+```
+sudo chown -R "$USER":"$(id -gn)" node_modules
+rm -rf node_modules/.vite
+rm -rf node_modules/.cache/storybook
+```

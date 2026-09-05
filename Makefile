@@ -23,7 +23,7 @@ rebuild:
 	docker compose up --build
 
 rebuild-restart:
-	docker compose down
+	docker compose down -v
 	docker compose up --build
 
 logs:
