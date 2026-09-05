@@ -47,3 +47,5 @@ storybook-static
 
 express-server
 react-lab-client
+
+.pnpm-store/
