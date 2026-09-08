@@ -1,0 +1,30 @@
+# CODEOWNERS file
+# Lines starting with '#' are comments.
+# Each line is a file pattern followed by one or more owners.
+
+# The following example assumes 'chunghoangtu' should be the code owner for specific directories and file types.
+
+# To make 'chunghoangtu' the default owner for everything in the repo
+*       @chunghoangtu
+
+# To specify code ownership for specific directories
+/apps/          @chunghoangtu
+/packages/      @chunghoangtu
+
+# To specify code ownership for specific file types
+*.js            @chunghoangtu
+*.ts            @chunghoangtu
+*.tsx           @chunghoangtu
+*.json          @chunghoangtu
+*.yml           @chunghoangtu
+*.md            @chunghoangtu
+*.html          @chunghoangtu
+*.css           @chunghoangtu
+
+# To add more code owners, repeat the pattern above with the directory, file pattern, or specific file, followed by the owner.
+# You can also specify GitHub teams as owners using the @org/teamname syntax.
+
+# Example for specifying a team (replace 'team-name' with the actual team name)
+# /apps/        @your-org/team-name
+
+# Remember to replace 'chunghoangtu' with the actual GitHub username and adjust the directories and file types according to your project's structure.
