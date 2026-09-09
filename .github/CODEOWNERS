@@ -12,14 +12,14 @@
 /packages/      @chunghoangtu
 
 # To specify code ownership for specific file types
-*.js            @chunghoangtu
+<!-- *.js            @chunghoangtu
 *.ts            @chunghoangtu
 *.tsx           @chunghoangtu
 *.json          @chunghoangtu
 *.yml           @chunghoangtu
 *.md            @chunghoangtu
 *.html          @chunghoangtu
-*.css           @chunghoangtu
+*.css           @chunghoangtu -->
 
 # To add more code owners, repeat the pattern above with the directory, file pattern, or specific file, followed by the owner.
 # You can also specify GitHub teams as owners using the @org/teamname syntax.
