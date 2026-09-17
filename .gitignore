@@ -49,3 +49,6 @@ express-server
 react-lab-client
 
 .pnpm-store/
+
+**/fire-base-emulator
+**/firebase-emulator/
