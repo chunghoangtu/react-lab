@@ -5,10 +5,13 @@ overrides:
   typescript: "^6.0.2"
 allowBuilds:
   "@apollo/protobufjs": true
+  '@firebase/util': false
   "@swc/core": true
   core-js: true
   core-js-pure: true
   esbuild: true
+  protobufjs: false
+  re2: true
   sharp: true
 minimumReleaseAgeExclude:
   - "@storybook/addon-vitest@10.5.7"
