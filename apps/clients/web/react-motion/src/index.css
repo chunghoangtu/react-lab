@@ -1,0 +1,88 @@
+@import "tailwindcss";
+
+body {
+  @apply bg-slate-950;
+  /* min-height: 1500px; */
+}
+
+.animated-app {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+
+  /* Top nav */
+  .nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1rem 2rem;
+    border-bottom: 1px solid rgba(148, 163, 184, 0.4);
+    backdrop-filter: blur(10px);
+    background: linear-gradient(to right, rgba(15, 23, 42, 0.9), rgba(15, 23, 42, 0.6));
+  }
+
+  .logo {
+    font-size: 1.1rem;
+    font-weight: 600;
+  }
+
+  .nav-links {
+    display: flex;
+    gap: 1rem;
+
+    a {
+      color: #9ca3af;
+      text-decoration: none;
+      font-size: 0.95rem;
+      padding: 0.35rem 0.75rem;
+      border-radius: 999px;
+      transition:
+        background 0.15s ease,
+        color 0.15s ease;
+
+      &:hover {
+        background: rgba(148, 163, 184, 0.1);
+        color: #e5e7eb;
+      }
+    }
+  }
+
+  .animated-page {
+    width: 960px;
+    max-width: 960px;
+    min-height: 720px;
+    margin: 3rem auto 0;
+    padding: 2rem;
+    background: radial-gradient(circle at top left, #1f2937, #020617 60%);
+    border-radius: 1.5rem;
+    border: 1px solid rgba(148, 163, 184, 0.35);
+    box-shadow: 0 24px 60px rgba(15, 23, 42, 0.7);
+
+    & > h2 {
+      font-size: 1.8rem;
+      margin-bottom: 0.75rem;
+    }
+
+    & > p {
+      margin: 0.25rem 0;
+      line-height: 1.6;
+      color: #d1d5db;
+    }
+  }
+
+  @keyframes logo-spin {
+    from {
+      transform: rotate(0deg);
+    }
+
+    to {
+      transform: rotate(360deg);
+    }
+  }
+
+  @media (prefers-reduced-motion: no-preference) {
+    a:nth-of-type(2) .logo {
+      animation: logo-spin infinite 20s linear;
+    }
+  }
+}
