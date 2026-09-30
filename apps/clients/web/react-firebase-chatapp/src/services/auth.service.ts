@@ -1,6 +1,7 @@
 import { auth } from "@/libs/firebase/config";
 import { addDocument, generateKeywords } from "@/services/firebase.service";
 import {
+  GoogleAuthProvider,
   FacebookAuthProvider,
   getAdditionalUserInfo,
   onAuthStateChanged,
@@ -24,6 +25,22 @@ const signUpNewUser = async (userCredential: UserCredential, providerId: string 
     });
   } catch (error: any) {
     throw new Error(error?.message, { cause: error });
+  }
+};
+
+export const signInWithGoogle = async (): Promise<UserCredential | null> => {
+  try {
+    const userCredential = await signInWithPopup(auth, new GoogleAuthProvider());
+    const additionalUserInfo = getAdditionalUserInfo(userCredential);
+
+    if (additionalUserInfo?.isNewUser) {
+      await signUpNewUser(userCredential, additionalUserInfo?.providerId);
+    }
+
+    return userCredential;
+  } catch (error) {
+    console.error(error);
+    return null;
   }
 };
 

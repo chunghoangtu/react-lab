@@ -17,7 +17,6 @@ vi.mock("react-i18next", () => ({
   },
 }));
 
-// Tạo mock object giả lập Storage
 const windowMock = () => ({
   matchMedia: vi.fn(() => ({
     matches: vi.fn(),

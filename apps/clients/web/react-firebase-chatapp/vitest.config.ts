@@ -1,6 +1,5 @@
 import { defineConfig } from "vitest/config";
 import path from "path";
-import { auth } from "./src/libs/firebase/config";
 
 export default defineConfig({
   resolve: {
@@ -9,7 +8,9 @@ export default defineConfig({
     },
   },
   test: {
-    environment: "node",
+    environment: "jsdom",
+    globals: true,
+    setupFiles: ['./vitest.setup.ts'],
     include: ["**/*.{test,spec}.{js,mjs,cjs,ts,mts,cts,jsx,tsx}"],
     ui: true,
     coverage: {
