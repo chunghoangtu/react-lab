@@ -34,9 +34,10 @@
     "lint-staged": "^17.3.0",
     "prettier": "3.9.6",
     "prettier-plugin-classnames": "^0.10.4",
+    "prettier-plugin-merge": "^0.10.1",
     "prettier-plugin-tailwindcss": "^0.8.1",
-    "turbo": "^2.10.12",
     "tsx": "^4.23.6",
+    "turbo": "^2.10.12",
     "typescript": "^6.0.2",
     "typescript-eslint": "^8.66.0"
   },
