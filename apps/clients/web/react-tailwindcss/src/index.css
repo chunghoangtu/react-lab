@@ -1,0 +1,54 @@
+@import "tailwindcss";
+
+/* @custom-variant dark (&:where(.dark, .dark *), @media (prefers-color-scheme: dark)); */
+@custom-variant dark (&:where(.dark, .dark *));
+
+@theme {
+  /* Custom colors */
+  --color-background: var(--color-teal-100);
+  --color-background-foreground: var(--color-teal-800);
+
+  --color-header: var(--color-teal-300);
+  --color-header-foreground: var(--color-teal-800);
+
+  --color-footer: var(--color-teal-300);
+  --color-footer-foreground: var(--color-teal-800);
+}
+
+.dark {
+  /* Custom colors */
+  --color-background: var(--color-teal-600);
+  --color-background-foreground: var(--color-teal-100);
+
+  --color-header: var(--color-teal-800);
+  --color-header-foreground: var(--color-teal-300);
+
+  --color-footer: var(--color-teal-800);
+  --color-footer-foreground: var(--color-teal-300);
+}
+
+body {
+  @apply bg-slate-950;
+  @apply min-h-screen;
+}
+
+@layer base {
+  a {
+    @apply text-indigo-500;
+  }
+}
+
+@layer components {
+  .button {
+    @apply transform rounded-xl bg-teal-600 p-2 text-xl text-teal-200;
+    @apply transition-all hover:translate-x-1 hover:-translate-y-1 hover:cursor-pointer;
+    @apply hover:bg-teal-700/80 hover:shadow-lg;
+    @apply active:translate-x-0.5 active:-translate-y-0.5;
+  }
+
+  @varia;
+}
+
+@utility border-indigo {
+  @apply border-2 border-indigo-400;
+}
