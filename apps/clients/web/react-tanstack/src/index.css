@@ -1,0 +1,20 @@
+@import "tailwindcss";
+
+body {
+  @apply min-h-screen;
+
+  #root {
+    @apply min-h-full;
+    @apply bg-teal-600/80;
+  }
+}
+
+@layer components {
+  button {
+    @apply rounded-xl bg-cyan-600 p-3 text-cyan-200 outline-none;
+    @apply cursor-pointer transition-all;
+    @apply hover:translate-x-0.5 hover:-translate-y-1 hover:bg-cyan-500;
+    @apply active:-translate-y-0.5;
+    @apply hover:shadow-lg hover:shadow-cyan-600;
+  }
+}
