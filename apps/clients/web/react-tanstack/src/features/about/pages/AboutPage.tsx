@@ -5,7 +5,7 @@ export default function AboutPage() {
   return (
     <div>
       About
-      <button onClick={() => navigate({ to: "/post" })}>Go to Post</button>
+      <button onClick={() => navigate({ to: "/posts" })}>Go to Post</button>
     </div>
   );
 }
