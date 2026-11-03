@@ -10,13 +10,32 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as AuthenticatedRouteImport } from './routes/_authenticated'
 import { Route as AboutRouteImport } from './routes/about'
-import { Route as PostIndexRouteImport } from './routes/post/index'
-import { Route as PostPostIdRouteImport } from './routes/post/$postId'
+import { Route as LoginRouteImport } from './routes/login'
+import { Route as ProfileRouteImport } from './routes/profile'
+import { Route as SearchRouteImport } from './routes/search'
+import { Route as StepsRouteImport } from './routes/steps'
+import { Route as hiddenRoutesFirstLevelRouteImport } from './routes/(hidden-routes)/first-level'
+import { Route as AuthenticatedDashboardRouteImport } from './routes/_authenticated/dashboard'
+import { Route as AuthenticatedSettingsRouteImport } from './routes/_authenticated/settings'
+import { Route as PostsIndexRouteImport } from './routes/posts/index'
+import { Route as PostsPostIdRouteImport } from './routes/posts/$postId'
+import { Route as hiddenRoutesLayoutsHiddenLayoutRouteImport } from './routes/(hidden-routes)/layouts/_hiddenLayout'
+import { Route as hiddenRoutesLayoutsVisibleLayoutRouteImport } from './routes/(hidden-routes)/layouts/visibleLayout'
+import { Route as PostsExampleTest1RouteImport } from './routes/posts/example.test1'
+import { Route as hiddenRoutesLayoutsHiddenLayoutBarRouteImport } from './routes/(hidden-routes)/layouts/_hiddenLayout/bar'
+import { Route as hiddenRoutesLayoutsHiddenLayoutFooRouteImport } from './routes/(hidden-routes)/layouts/_hiddenLayout/foo'
+import { Route as hiddenRoutesLayoutsVisibleLayoutBarRouteImport } from './routes/(hidden-routes)/layouts/visibleLayout/bar'
+import { Route as hiddenRoutesLayoutsVisibleLayoutFooRouteImport } from './routes/(hidden-routes)/layouts/visibleLayout/foo'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AuthenticatedRoute = AuthenticatedRouteImport.update({
+  id: '/_authenticated',
   getParentRoute: () => rootRouteImport,
 } as any)
 const AboutRoute = AboutRouteImport.update({
@@ -24,49 +43,233 @@ const AboutRoute = AboutRouteImport.update({
   path: '/about',
   getParentRoute: () => rootRouteImport,
 } as any)
-const PostIndexRoute = PostIndexRouteImport.update({
-  id: '/post/',
-  path: '/post/',
+const LoginRoute = LoginRouteImport.update({
+  id: '/login',
+  path: '/login',
   getParentRoute: () => rootRouteImport,
 } as any)
-const PostPostIdRoute = PostPostIdRouteImport.update({
-  id: '/post/$postId',
-  path: '/post/$postId',
+const ProfileRoute = ProfileRouteImport.update({
+  id: '/profile',
+  path: '/profile',
   getParentRoute: () => rootRouteImport,
 } as any)
+const SearchRoute = SearchRouteImport.update({
+  id: '/search',
+  path: '/search',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const StepsRoute = StepsRouteImport.update({
+  id: '/steps',
+  path: '/steps',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const hiddenRoutesFirstLevelRoute = hiddenRoutesFirstLevelRouteImport.update({
+  id: '/(hidden-routes)/first-level',
+  path: '/first-level',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AuthenticatedDashboardRoute = AuthenticatedDashboardRouteImport.update({
+  id: '/dashboard',
+  path: '/dashboard',
+  getParentRoute: () => AuthenticatedRoute,
+} as any)
+const AuthenticatedSettingsRoute = AuthenticatedSettingsRouteImport.update({
+  id: '/settings',
+  path: '/settings',
+  getParentRoute: () => AuthenticatedRoute,
+} as any)
+const PostsIndexRoute = PostsIndexRouteImport.update({
+  id: '/posts/',
+  path: '/posts/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const PostsPostIdRoute = PostsPostIdRouteImport.update({
+  id: '/posts/$postId',
+  path: '/posts/$postId',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const hiddenRoutesLayoutsHiddenLayoutRoute =
+  hiddenRoutesLayoutsHiddenLayoutRouteImport.update({
+    id: '/(hidden-routes)/layouts/_hiddenLayout',
+    path: '/layouts',
+    getParentRoute: () => rootRouteImport,
+  } as any)
+const hiddenRoutesLayoutsVisibleLayoutRoute =
+  hiddenRoutesLayoutsVisibleLayoutRouteImport.update({
+    id: '/(hidden-routes)/layouts/visibleLayout',
+    path: '/layouts/visibleLayout',
+    getParentRoute: () => rootRouteImport,
+  } as any)
+const PostsExampleTest1Route = PostsExampleTest1RouteImport.update({
+  id: '/posts/example/test1',
+  path: '/posts/example/test1',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const hiddenRoutesLayoutsHiddenLayoutBarRoute =
+  hiddenRoutesLayoutsHiddenLayoutBarRouteImport.update({
+    id: '/bar',
+    path: '/bar',
+    getParentRoute: () => hiddenRoutesLayoutsHiddenLayoutRoute,
+  } as any)
+const hiddenRoutesLayoutsHiddenLayoutFooRoute =
+  hiddenRoutesLayoutsHiddenLayoutFooRouteImport.update({
+    id: '/foo',
+    path: '/foo',
+    getParentRoute: () => hiddenRoutesLayoutsHiddenLayoutRoute,
+  } as any)
+const hiddenRoutesLayoutsVisibleLayoutBarRoute =
+  hiddenRoutesLayoutsVisibleLayoutBarRouteImport.update({
+    id: '/bar',
+    path: '/bar',
+    getParentRoute: () => hiddenRoutesLayoutsVisibleLayoutRoute,
+  } as any)
+const hiddenRoutesLayoutsVisibleLayoutFooRoute =
+  hiddenRoutesLayoutsVisibleLayoutFooRouteImport.update({
+    id: '/foo',
+    path: '/foo',
+    getParentRoute: () => hiddenRoutesLayoutsVisibleLayoutRoute,
+  } as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
-  '/post/$postId': typeof PostPostIdRoute
-  '/post/': typeof PostIndexRoute
+  '/login': typeof LoginRoute
+  '/profile': typeof ProfileRoute
+  '/search': typeof SearchRoute
+  '/steps': typeof StepsRoute
+  '/first-level': typeof hiddenRoutesFirstLevelRoute
+  '/dashboard': typeof AuthenticatedDashboardRoute
+  '/settings': typeof AuthenticatedSettingsRoute
+  '/posts/$postId': typeof PostsPostIdRoute
+  '/posts/': typeof PostsIndexRoute
+  '/layouts': typeof hiddenRoutesLayoutsHiddenLayoutRouteWithChildren
+  '/layouts/visibleLayout': typeof hiddenRoutesLayoutsVisibleLayoutRouteWithChildren
+  '/posts/example/test1': typeof PostsExampleTest1Route
+  '/layouts/bar': typeof hiddenRoutesLayoutsHiddenLayoutBarRoute
+  '/layouts/foo': typeof hiddenRoutesLayoutsHiddenLayoutFooRoute
+  '/layouts/visibleLayout/bar': typeof hiddenRoutesLayoutsVisibleLayoutBarRoute
+  '/layouts/visibleLayout/foo': typeof hiddenRoutesLayoutsVisibleLayoutFooRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
-  '/post/$postId': typeof PostPostIdRoute
-  '/post': typeof PostIndexRoute
+  '/login': typeof LoginRoute
+  '/profile': typeof ProfileRoute
+  '/search': typeof SearchRoute
+  '/steps': typeof StepsRoute
+  '/first-level': typeof hiddenRoutesFirstLevelRoute
+  '/dashboard': typeof AuthenticatedDashboardRoute
+  '/settings': typeof AuthenticatedSettingsRoute
+  '/posts/$postId': typeof PostsPostIdRoute
+  '/posts': typeof PostsIndexRoute
+  '/layouts': typeof hiddenRoutesLayoutsHiddenLayoutRouteWithChildren
+  '/layouts/visibleLayout': typeof hiddenRoutesLayoutsVisibleLayoutRouteWithChildren
+  '/posts/example/test1': typeof PostsExampleTest1Route
+  '/layouts/bar': typeof hiddenRoutesLayoutsHiddenLayoutBarRoute
+  '/layouts/foo': typeof hiddenRoutesLayoutsHiddenLayoutFooRoute
+  '/layouts/visibleLayout/bar': typeof hiddenRoutesLayoutsVisibleLayoutBarRoute
+  '/layouts/visibleLayout/foo': typeof hiddenRoutesLayoutsVisibleLayoutFooRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/_authenticated': typeof AuthenticatedRouteWithChildren
   '/about': typeof AboutRoute
-  '/post/$postId': typeof PostPostIdRoute
-  '/post/': typeof PostIndexRoute
+  '/login': typeof LoginRoute
+  '/profile': typeof ProfileRoute
+  '/search': typeof SearchRoute
+  '/steps': typeof StepsRoute
+  '/(hidden-routes)/first-level': typeof hiddenRoutesFirstLevelRoute
+  '/_authenticated/dashboard': typeof AuthenticatedDashboardRoute
+  '/_authenticated/settings': typeof AuthenticatedSettingsRoute
+  '/posts/$postId': typeof PostsPostIdRoute
+  '/posts/': typeof PostsIndexRoute
+  '/(hidden-routes)/layouts/_hiddenLayout': typeof hiddenRoutesLayoutsHiddenLayoutRouteWithChildren
+  '/(hidden-routes)/layouts/visibleLayout': typeof hiddenRoutesLayoutsVisibleLayoutRouteWithChildren
+  '/posts/example/test1': typeof PostsExampleTest1Route
+  '/(hidden-routes)/layouts/_hiddenLayout/bar': typeof hiddenRoutesLayoutsHiddenLayoutBarRoute
+  '/(hidden-routes)/layouts/_hiddenLayout/foo': typeof hiddenRoutesLayoutsHiddenLayoutFooRoute
+  '/(hidden-routes)/layouts/visibleLayout/bar': typeof hiddenRoutesLayoutsVisibleLayoutBarRoute
+  '/(hidden-routes)/layouts/visibleLayout/foo': typeof hiddenRoutesLayoutsVisibleLayoutFooRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/about' | '/post/$postId' | '/post/'
+  fullPaths:
+    | '/'
+    | '/about'
+    | '/login'
+    | '/profile'
+    | '/search'
+    | '/steps'
+    | '/first-level'
+    | '/dashboard'
+    | '/settings'
+    | '/posts/$postId'
+    | '/posts/'
+    | '/layouts'
+    | '/layouts/visibleLayout'
+    | '/posts/example/test1'
+    | '/layouts/bar'
+    | '/layouts/foo'
+    | '/layouts/visibleLayout/bar'
+    | '/layouts/visibleLayout/foo'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/about' | '/post/$postId' | '/post'
-  id: '__root__' | '/' | '/about' | '/post/$postId' | '/post/'
+  to:
+    | '/'
+    | '/about'
+    | '/login'
+    | '/profile'
+    | '/search'
+    | '/steps'
+    | '/first-level'
+    | '/dashboard'
+    | '/settings'
+    | '/posts/$postId'
+    | '/posts'
+    | '/layouts'
+    | '/layouts/visibleLayout'
+    | '/posts/example/test1'
+    | '/layouts/bar'
+    | '/layouts/foo'
+    | '/layouts/visibleLayout/bar'
+    | '/layouts/visibleLayout/foo'
+  id:
+    | '__root__'
+    | '/'
+    | '/_authenticated'
+    | '/about'
+    | '/login'
+    | '/profile'
+    | '/search'
+    | '/steps'
+    | '/(hidden-routes)/first-level'
+    | '/_authenticated/dashboard'
+    | '/_authenticated/settings'
+    | '/posts/$postId'
+    | '/posts/'
+    | '/(hidden-routes)/layouts/_hiddenLayout'
+    | '/(hidden-routes)/layouts/visibleLayout'
+    | '/posts/example/test1'
+    | '/(hidden-routes)/layouts/_hiddenLayout/bar'
+    | '/(hidden-routes)/layouts/_hiddenLayout/foo'
+    | '/(hidden-routes)/layouts/visibleLayout/bar'
+    | '/(hidden-routes)/layouts/visibleLayout/foo'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  AuthenticatedRoute: typeof AuthenticatedRouteWithChildren
   AboutRoute: typeof AboutRoute
-  PostPostIdRoute: typeof PostPostIdRoute
-  PostIndexRoute: typeof PostIndexRoute
+  LoginRoute: typeof LoginRoute
+  ProfileRoute: typeof ProfileRoute
+  SearchRoute: typeof SearchRoute
+  StepsRoute: typeof StepsRoute
+  hiddenRoutesFirstLevelRoute: typeof hiddenRoutesFirstLevelRoute
+  PostsPostIdRoute: typeof PostsPostIdRoute
+  PostsIndexRoute: typeof PostsIndexRoute
+  hiddenRoutesLayoutsHiddenLayoutRoute: typeof hiddenRoutesLayoutsHiddenLayoutRouteWithChildren
+  hiddenRoutesLayoutsVisibleLayoutRoute: typeof hiddenRoutesLayoutsVisibleLayoutRouteWithChildren
+  PostsExampleTest1Route: typeof PostsExampleTest1Route
 }
 
 declare module '@tanstack/react-router' {
@@ -78,6 +281,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/_authenticated': {
+      id: '/_authenticated'
+      path: ''
+      fullPath: '/'
+      preLoaderRoute: typeof AuthenticatedRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/about': {
       id: '/about'
       path: '/about'
@@ -85,28 +295,187 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof AboutRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/post/': {
-      id: '/post/'
-      path: '/post'
-      fullPath: '/post/'
-      preLoaderRoute: typeof PostIndexRouteImport
+    '/login': {
+      id: '/login'
+      path: '/login'
+      fullPath: '/login'
+      preLoaderRoute: typeof LoginRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/post/$postId': {
-      id: '/post/$postId'
-      path: '/post/$postId'
-      fullPath: '/post/$postId'
-      preLoaderRoute: typeof PostPostIdRouteImport
+    '/profile': {
+      id: '/profile'
+      path: '/profile'
+      fullPath: '/profile'
+      preLoaderRoute: typeof ProfileRouteImport
       parentRoute: typeof rootRouteImport
+    }
+    '/search': {
+      id: '/search'
+      path: '/search'
+      fullPath: '/search'
+      preLoaderRoute: typeof SearchRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/steps': {
+      id: '/steps'
+      path: '/steps'
+      fullPath: '/steps'
+      preLoaderRoute: typeof StepsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/(hidden-routes)/first-level': {
+      id: '/(hidden-routes)/first-level'
+      path: '/first-level'
+      fullPath: '/first-level'
+      preLoaderRoute: typeof hiddenRoutesFirstLevelRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/_authenticated/dashboard': {
+      id: '/_authenticated/dashboard'
+      path: '/dashboard'
+      fullPath: '/dashboard'
+      preLoaderRoute: typeof AuthenticatedDashboardRouteImport
+      parentRoute: typeof AuthenticatedRoute
+    }
+    '/_authenticated/settings': {
+      id: '/_authenticated/settings'
+      path: '/settings'
+      fullPath: '/settings'
+      preLoaderRoute: typeof AuthenticatedSettingsRouteImport
+      parentRoute: typeof AuthenticatedRoute
+    }
+    '/posts/': {
+      id: '/posts/'
+      path: '/posts'
+      fullPath: '/posts/'
+      preLoaderRoute: typeof PostsIndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/posts/$postId': {
+      id: '/posts/$postId'
+      path: '/posts/$postId'
+      fullPath: '/posts/$postId'
+      preLoaderRoute: typeof PostsPostIdRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/(hidden-routes)/layouts/_hiddenLayout': {
+      id: '/(hidden-routes)/layouts/_hiddenLayout'
+      path: '/layouts'
+      fullPath: '/layouts'
+      preLoaderRoute: typeof hiddenRoutesLayoutsHiddenLayoutRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/(hidden-routes)/layouts/visibleLayout': {
+      id: '/(hidden-routes)/layouts/visibleLayout'
+      path: '/layouts/visibleLayout'
+      fullPath: '/layouts/visibleLayout'
+      preLoaderRoute: typeof hiddenRoutesLayoutsVisibleLayoutRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/posts/example/test1': {
+      id: '/posts/example/test1'
+      path: '/posts/example/test1'
+      fullPath: '/posts/example/test1'
+      preLoaderRoute: typeof PostsExampleTest1RouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/(hidden-routes)/layouts/_hiddenLayout/bar': {
+      id: '/(hidden-routes)/layouts/_hiddenLayout/bar'
+      path: '/bar'
+      fullPath: '/layouts/bar'
+      preLoaderRoute: typeof hiddenRoutesLayoutsHiddenLayoutBarRouteImport
+      parentRoute: typeof hiddenRoutesLayoutsHiddenLayoutRoute
+    }
+    '/(hidden-routes)/layouts/_hiddenLayout/foo': {
+      id: '/(hidden-routes)/layouts/_hiddenLayout/foo'
+      path: '/foo'
+      fullPath: '/layouts/foo'
+      preLoaderRoute: typeof hiddenRoutesLayoutsHiddenLayoutFooRouteImport
+      parentRoute: typeof hiddenRoutesLayoutsHiddenLayoutRoute
+    }
+    '/(hidden-routes)/layouts/visibleLayout/bar': {
+      id: '/(hidden-routes)/layouts/visibleLayout/bar'
+      path: '/bar'
+      fullPath: '/layouts/visibleLayout/bar'
+      preLoaderRoute: typeof hiddenRoutesLayoutsVisibleLayoutBarRouteImport
+      parentRoute: typeof hiddenRoutesLayoutsVisibleLayoutRoute
+    }
+    '/(hidden-routes)/layouts/visibleLayout/foo': {
+      id: '/(hidden-routes)/layouts/visibleLayout/foo'
+      path: '/foo'
+      fullPath: '/layouts/visibleLayout/foo'
+      preLoaderRoute: typeof hiddenRoutesLayoutsVisibleLayoutFooRouteImport
+      parentRoute: typeof hiddenRoutesLayoutsVisibleLayoutRoute
     }
   }
 }
 
+interface AuthenticatedRouteChildren {
+  AuthenticatedDashboardRoute: typeof AuthenticatedDashboardRoute
+  AuthenticatedSettingsRoute: typeof AuthenticatedSettingsRoute
+}
+
+const AuthenticatedRouteChildren: AuthenticatedRouteChildren = {
+  AuthenticatedDashboardRoute: AuthenticatedDashboardRoute,
+  AuthenticatedSettingsRoute: AuthenticatedSettingsRoute,
+}
+
+const AuthenticatedRouteWithChildren = AuthenticatedRoute._addFileChildren(
+  AuthenticatedRouteChildren,
+)
+
+interface hiddenRoutesLayoutsHiddenLayoutRouteChildren {
+  hiddenRoutesLayoutsHiddenLayoutBarRoute: typeof hiddenRoutesLayoutsHiddenLayoutBarRoute
+  hiddenRoutesLayoutsHiddenLayoutFooRoute: typeof hiddenRoutesLayoutsHiddenLayoutFooRoute
+}
+
+const hiddenRoutesLayoutsHiddenLayoutRouteChildren: hiddenRoutesLayoutsHiddenLayoutRouteChildren =
+  {
+    hiddenRoutesLayoutsHiddenLayoutBarRoute:
+      hiddenRoutesLayoutsHiddenLayoutBarRoute,
+    hiddenRoutesLayoutsHiddenLayoutFooRoute:
+      hiddenRoutesLayoutsHiddenLayoutFooRoute,
+  }
+
+const hiddenRoutesLayoutsHiddenLayoutRouteWithChildren =
+  hiddenRoutesLayoutsHiddenLayoutRoute._addFileChildren(
+    hiddenRoutesLayoutsHiddenLayoutRouteChildren,
+  )
+
+interface hiddenRoutesLayoutsVisibleLayoutRouteChildren {
+  hiddenRoutesLayoutsVisibleLayoutBarRoute: typeof hiddenRoutesLayoutsVisibleLayoutBarRoute
+  hiddenRoutesLayoutsVisibleLayoutFooRoute: typeof hiddenRoutesLayoutsVisibleLayoutFooRoute
+}
+
+const hiddenRoutesLayoutsVisibleLayoutRouteChildren: hiddenRoutesLayoutsVisibleLayoutRouteChildren =
+  {
+    hiddenRoutesLayoutsVisibleLayoutBarRoute:
+      hiddenRoutesLayoutsVisibleLayoutBarRoute,
+    hiddenRoutesLayoutsVisibleLayoutFooRoute:
+      hiddenRoutesLayoutsVisibleLayoutFooRoute,
+  }
+
+const hiddenRoutesLayoutsVisibleLayoutRouteWithChildren =
+  hiddenRoutesLayoutsVisibleLayoutRoute._addFileChildren(
+    hiddenRoutesLayoutsVisibleLayoutRouteChildren,
+  )
+
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  AuthenticatedRoute: AuthenticatedRouteWithChildren,
   AboutRoute: AboutRoute,
-  PostPostIdRoute: PostPostIdRoute,
-  PostIndexRoute: PostIndexRoute,
+  LoginRoute: LoginRoute,
+  ProfileRoute: ProfileRoute,
+  SearchRoute: SearchRoute,
+  StepsRoute: StepsRoute,
+  hiddenRoutesFirstLevelRoute: hiddenRoutesFirstLevelRoute,
+  PostsPostIdRoute: PostsPostIdRoute,
+  PostsIndexRoute: PostsIndexRoute,
+  hiddenRoutesLayoutsHiddenLayoutRoute:
+    hiddenRoutesLayoutsHiddenLayoutRouteWithChildren,
+  hiddenRoutesLayoutsVisibleLayoutRoute:
+    hiddenRoutesLayoutsVisibleLayoutRouteWithChildren,
+  PostsExampleTest1Route: PostsExampleTest1Route,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)

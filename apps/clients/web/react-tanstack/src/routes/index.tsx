@@ -1,6 +1,7 @@
-import { HomePage } from '@/features/home/pages'
-import { createFileRoute } from '@tanstack/react-router'
+import { HomePage } from "@/features/home/pages";
+import { createFileRoute } from "@tanstack/react-router";
 
-export const Route = createFileRoute('/')({
+export const Route = createFileRoute("/")({
+  staticData: { breadcrumb: "Home" },
   component: HomePage,
-})
+});
