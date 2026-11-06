@@ -12,7 +12,7 @@ function CustomLink({ children, className, ...props }: CustomLinkProps) {
   return (
     <a
       {...props}
-      className={`text-muted-foreground mx-1 italic ${className ?? "font-light"}
+      className={`text-muted-foreground mx-1 text-base italic ${className ?? "font-light"}
         ${props.underline ? "underline" : ""}`}
     >
       {children}
