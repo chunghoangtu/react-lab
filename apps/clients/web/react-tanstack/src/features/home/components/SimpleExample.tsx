@@ -124,11 +124,11 @@ export default function SimpleExample() {
     <div className='p-3'>
       <div className='flex gap-3'>
         {!posts ? (
-          <button onClick={() => setIsEnableLoadData(true)}>Load data</button>
+          <button className="custom-button" onClick={() => setIsEnableLoadData(true)}>Load data</button>
         ) : (
-          <button onClick={() => reloadPosts()}>Refetch data</button>
+          <button className="custom-button" onClick={() => reloadPosts()}>Refetch data</button>
         )}
-        <button onClick={() => create({ id: 1, title: "test", userId: 1, body: "test post" })}>
+        <button className="custom-button" onClick={() => create({ id: 1, title: "test", userId: 1, body: "test post" })}>
           {isCreating ? "Creating new post..." : "Create New Post"}
         </button>
       </div>

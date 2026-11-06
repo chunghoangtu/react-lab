@@ -17,6 +17,7 @@ function RouteComponent() {
         <>
           <p>Hello user!</p>
           <button
+            className='custom-button'
             onClick={async () => {
               signOut();
               setIsAuthen(false);
@@ -28,6 +29,7 @@ function RouteComponent() {
         </>
       ) : (
         <button
+          className='custom-button'
           onClick={async () => {
             signIn();
             setIsAuthen(true);

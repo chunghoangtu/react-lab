@@ -14,7 +14,7 @@ export default function PostPage() {
       >
         Post 1
       </Link>
-      <button onClick={() => navigate({ to: "/about" })}>Go to About</button>
+      <button className='custom-button' onClick={() => navigate({ to: "/about" })}>Go to About</button>
     </div>
   );
 }

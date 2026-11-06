@@ -16,6 +16,7 @@ import { Route as LoginRouteImport } from './routes/login'
 import { Route as ProfileRouteImport } from './routes/profile'
 import { Route as SearchRouteImport } from './routes/search'
 import { Route as StepsRouteImport } from './routes/steps'
+import { Route as TableRouteImport } from './routes/table'
 import { Route as hiddenRoutesFirstLevelRouteImport } from './routes/(hidden-routes)/first-level'
 import { Route as AuthenticatedDashboardRouteImport } from './routes/_authenticated/dashboard'
 import { Route as AuthenticatedSettingsRouteImport } from './routes/_authenticated/settings'
@@ -61,6 +62,11 @@ const SearchRoute = SearchRouteImport.update({
 const StepsRoute = StepsRouteImport.update({
   id: '/steps',
   path: '/steps',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const TableRoute = TableRouteImport.update({
+  id: '/table',
+  path: '/table',
   getParentRoute: () => rootRouteImport,
 } as any)
 const hiddenRoutesFirstLevelRoute = hiddenRoutesFirstLevelRouteImport.update({
@@ -137,6 +143,7 @@ export interface FileRoutesByFullPath {
   '/profile': typeof ProfileRoute
   '/search': typeof SearchRoute
   '/steps': typeof StepsRoute
+  '/table': typeof TableRoute
   '/first-level': typeof hiddenRoutesFirstLevelRoute
   '/dashboard': typeof AuthenticatedDashboardRoute
   '/settings': typeof AuthenticatedSettingsRoute
@@ -157,6 +164,7 @@ export interface FileRoutesByTo {
   '/profile': typeof ProfileRoute
   '/search': typeof SearchRoute
   '/steps': typeof StepsRoute
+  '/table': typeof TableRoute
   '/first-level': typeof hiddenRoutesFirstLevelRoute
   '/dashboard': typeof AuthenticatedDashboardRoute
   '/settings': typeof AuthenticatedSettingsRoute
@@ -179,6 +187,7 @@ export interface FileRoutesById {
   '/profile': typeof ProfileRoute
   '/search': typeof SearchRoute
   '/steps': typeof StepsRoute
+  '/table': typeof TableRoute
   '/(hidden-routes)/first-level': typeof hiddenRoutesFirstLevelRoute
   '/_authenticated/dashboard': typeof AuthenticatedDashboardRoute
   '/_authenticated/settings': typeof AuthenticatedSettingsRoute
@@ -201,6 +210,7 @@ export interface FileRouteTypes {
     | '/profile'
     | '/search'
     | '/steps'
+    | '/table'
     | '/first-level'
     | '/dashboard'
     | '/settings'
@@ -221,6 +231,7 @@ export interface FileRouteTypes {
     | '/profile'
     | '/search'
     | '/steps'
+    | '/table'
     | '/first-level'
     | '/dashboard'
     | '/settings'
@@ -242,6 +253,7 @@ export interface FileRouteTypes {
     | '/profile'
     | '/search'
     | '/steps'
+    | '/table'
     | '/(hidden-routes)/first-level'
     | '/_authenticated/dashboard'
     | '/_authenticated/settings'
@@ -264,6 +276,7 @@ export interface RootRouteChildren {
   ProfileRoute: typeof ProfileRoute
   SearchRoute: typeof SearchRoute
   StepsRoute: typeof StepsRoute
+  TableRoute: typeof TableRoute
   hiddenRoutesFirstLevelRoute: typeof hiddenRoutesFirstLevelRoute
   PostsPostIdRoute: typeof PostsPostIdRoute
   PostsIndexRoute: typeof PostsIndexRoute
@@ -321,6 +334,13 @@ declare module '@tanstack/react-router' {
       path: '/steps'
       fullPath: '/steps'
       preLoaderRoute: typeof StepsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/table': {
+      id: '/table'
+      path: '/table'
+      fullPath: '/table'
+      preLoaderRoute: typeof TableRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/(hidden-routes)/first-level': {
@@ -468,6 +488,7 @@ const rootRouteChildren: RootRouteChildren = {
   ProfileRoute: ProfileRoute,
   SearchRoute: SearchRoute,
   StepsRoute: StepsRoute,
+  TableRoute: TableRoute,
   hiddenRoutesFirstLevelRoute: hiddenRoutesFirstLevelRoute,
   PostsPostIdRoute: PostsPostIdRoute,
   PostsIndexRoute: PostsIndexRoute,
