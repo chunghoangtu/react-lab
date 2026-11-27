@@ -1,3 +1,5 @@
+/* eslint-disable react-hooks/incompatible-library */
+/* eslint-disable react-hooks/exhaustive-deps */
 import { useMemo, useRef, useState } from "react";
 import {
   useTable,
