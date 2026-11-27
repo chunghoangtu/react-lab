@@ -85,11 +85,17 @@ export const columns = columnHelper.columns([
   }),
   columnHelper.display({
     id: "more",
+    size: 56,
+    minSize: 56,
+    maxSize: 56,
     cell: () => {
       return (
         <DropdownMenu>
           <DropdownMenuTrigger>
-            <Button variant={"ghost"} className='cursor-pointer'>
+            <Button
+              variant={"ghost"}
+              className='cursor-pointer'
+            >
               <MoreVertical />
             </Button>
           </DropdownMenuTrigger>
