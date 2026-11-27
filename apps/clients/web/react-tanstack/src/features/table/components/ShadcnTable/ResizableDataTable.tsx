@@ -81,7 +81,7 @@ export default function ResizableDataTable<TData extends RowData>({
     >
       <div
         className='rounded-md border border-indigo-300'
-        style={{ width: Math.max(totalTableWidth + 10, 100) + "px" }}
+        style={{ width: Math.max(totalTableWidth, 100) + "px" }}
       >
         <div className='overflow-hidden'>
           <Table className='bg-indigo-200/30 text-white'>
@@ -106,7 +106,7 @@ export default function ResizableDataTable<TData extends RowData>({
         <div
           ref={tableContainerRef}
           style={{
-            width: Math.max(totalTableWidth + 10, 100) + "px",
+            width: Math.max(totalTableWidth, 100) + "px",
             height: "400px",
             overflowY: "auto",
             overflowX: "hidden",
@@ -135,6 +135,7 @@ export default function ResizableDataTable<TData extends RowData>({
                         transform: `translateY(${virtualItem.start}px)`,
                       }}
                       key={virtualItem.key}
+                      data-index={virtualItem.index}
                       data-state={row!.getIsSelected() && "selected"}
                     >
                       {row!.getVisibleCells().map((cell) => (
