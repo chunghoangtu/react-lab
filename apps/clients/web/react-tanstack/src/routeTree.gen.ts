@@ -428,15 +428,6 @@ declare module '@tanstack/react-router' {
       parentRoute: typeof hiddenRoutesLayoutsVisibleLayoutRoute
     }
   }
-
-const hiddenRoutesLayoutsHiddenLayoutRouteWithChildren =
-  hiddenRoutesLayoutsHiddenLayoutRoute._addFileChildren(
-    hiddenRoutesLayoutsHiddenLayoutRouteChildren,
-  )
-
-interface hiddenRoutesLayoutsVisibleLayoutRouteChildren {
-  hiddenRoutesLayoutsVisibleLayoutBarRoute: typeof hiddenRoutesLayoutsVisibleLayoutBarRoute
-  hiddenRoutesLayoutsVisibleLayoutFooRoute: typeof hiddenRoutesLayoutsVisibleLayoutFooRoute
 }
 
 interface AuthenticatedRouteChildren {
