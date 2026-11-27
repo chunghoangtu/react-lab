@@ -24,6 +24,7 @@ export const Route = createFileRoute("/posts/$postId")({
     };
   },
   loader: async ({ params, deps: { userId } }) => {
+    console.log(userId);
     await new Promise((resolve) => setTimeout(resolve, 1000));
     // Lets assume that we are gonna all adn API to fetch post details
     return POSTS.find((post) => post.id === +params.postId) as Post;

@@ -1,5 +1,5 @@
 import { createFileRoute } from "@tanstack/react-router";
-import z, { string } from "zod";
+import z from "zod";
 
 // type Category = "electronics" | "clothing" | "books" | "toys";
 // type ItemFilters = {
